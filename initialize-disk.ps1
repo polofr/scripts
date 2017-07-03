@@ -1,3 +1,6 @@
+# https://docs.microsoft.com/en-us/azure/virtual-machines/windows/attach-disk-ps
+# https://docs.microsoft.com/en-us/azure/virtual-machines/windows/attach-disk-portal
+
 $disks = Get-Disk | Where partitionstyle -eq 'raw' | sort number
 
 $letters = 70..89 | ForEach-Object { [char]$_ }

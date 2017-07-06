@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "string",
+            "defaultValue": "cirrusIpAddress1"
+        },
+        "location": {
+            "type": "string",
+			"defaultValue": "southcentralus"
+        },
+        "publicIPAllocationMethod": {
+            "type": "string",
+            "defaultValue": "Dynamic",
+            "allowedValues": [
+                "Dynamic",
+                "Static"
+            ]
+        },
+        "idleTimeoutInMinutes": {
+            "type": "int",
+            "defaultValue": 4
+        },
+        "domainNameLabel": {
+            "type": "string",
+            "defaultValue": "cirruspublicip"
+        },
+        "publicIpAddressVersion": {
+            "type": "string",
+            "defaultValue": "IPv4",
+            "allowedValues": [
+                "IPv4",
+                "IPv6"
+            ]
+        }
+    },
+    "resources": [
+        {
+            "apiVersion": "2016-03-30",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('name')]",
+            "location": "[parameters('location')]",
+            "properties": {
+                "publicIPAllocationMethod": "[parameters('publicIPAllocationMethod')]",
+                "idleTimeoutInMinutes": "[parameters('idleTimeoutInMinutes')]",
+                "publicIpAddressVersion": "[parameters('publicIpAddressVersion')]",
+                "dnsSettings": {
+                    "domainNameLabel": "[parameters('domainNameLabel')]"
+                }
+            }
+        }
+    ]
+}

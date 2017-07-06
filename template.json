@@ -8,7 +8,7 @@
         },
         "location": {
             "type": "string",
-			"defaultValue": "southcentralus"
+	    "defaultValue": "southcentralus"
         },
         "publicIPAllocationMethod": {
             "type": "string",

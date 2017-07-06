@@ -4,6 +4,9 @@
     "parameters": {
         "name": {
             "value": "pcartonCirrusIpAddress1"
-        }        
+        },
+        "domainNameLabel": {
+            "value": "pcartoncirruspublicip"
+        }
     }
 }
